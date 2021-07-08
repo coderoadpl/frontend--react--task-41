@@ -1,11 +1,30 @@
 import React from 'react'
 
-export const App = () => {
-  return (
-    <div>
-      CodeRoad APP
-    </div>
-  )
+class App extends React.Component {
+  state = {
+    number: 1
+  }
+
+  inc = () => {
+    this.setState((prevState) => ({
+      number: prevState.number + 1
+    }))
+  }
+
+  render () {
+    return (
+      <div>
+        <h1>
+          {this.state.number}
+        </h1>
+        <button
+          onClick={this.inc}
+        >
+          +
+        </button>
+      </div>
+    )
+  }
 }
 
 export default App
